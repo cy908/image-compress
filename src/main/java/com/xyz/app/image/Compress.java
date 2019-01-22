@@ -43,7 +43,6 @@ public class Compress {
 			return;
 		}
 		file = new File(out);
-		file = new File(out);
 		if (!file.exists()) {
 			if (file.isDirectory()) {
 				log.error(MessageFormat.format("[{0}]不是文件！", out));
