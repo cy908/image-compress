@@ -49,9 +49,11 @@ public class Compress {
 				log.error(MessageFormat.format("[{0}]不是文件！", out));
 				return;
 			}
-			if (!file.getParentFile().mkdirs()) {
-				log.error(MessageFormat.format("[{0}]创建失败！", file.getParentFile().getAbsolutePath()));
-				return;
+			if (!file.getParentFile().exists()) {
+				if (!file.getParentFile().mkdirs()) {
+					log.error(MessageFormat.format("[{0}]创建失败！", file.getParentFile().getAbsolutePath()));
+					return;
+				}
 			}
 		} else {
 			if (file.isFile()) {
